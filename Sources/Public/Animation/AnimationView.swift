@@ -556,6 +556,7 @@ final public class AnimationView: AnimationViewBase {
 
   /// Reloads the images supplied to the animation from the `imageProvider`
   public func reloadImages() {
+      animationLayer?.imageProvider = imageProvider
     animationLayer?.reloadImages()
   }
 
