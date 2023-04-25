@@ -94,7 +94,7 @@ class LayerModel: Codable, DictionaryInitializable {
     startTime = try container.decode(Double.self, forKey: .startTime)
     transform = try container.decode(Transform.self, forKey: .transform)
     parent = try container.decodeIfPresent(Int.self, forKey: .parent)
-    blendMode = try container.decodeIfPresent(BlendMode.self, forKey: .blendMode) ?? .normal
+    blendMode = (try? container.decodeIfPresent(BlendMode.self, forKey: .blendMode)) ?? .normal
     masks = try container.decodeIfPresent([Mask].self, forKey: .masks)
     timeStretch = try container.decodeIfPresent(Double.self, forKey: .timeStretch) ?? 1
     matte = try container.decodeIfPresent(MatteType.self, forKey: .matte)
